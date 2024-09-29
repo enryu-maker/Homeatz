@@ -1,118 +1,60 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
+// import 'react-native-gesture-handler';
+import {View, Text, StatusBar, Platform, Linking} from 'react-native';
 import React from 'react';
-import type {PropsWithChildren} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import {Provider} from 'react-redux';
+import {store} from './Store';
+import Index from './Src/Navigation/Index';
+import {request, PERMISSIONS, requestMultiple} from 'react-native-permissions';
+import * as Sentry from '@sentry/react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
-
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-}
-
-function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
-}
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
+Sentry.init({
+  dsn: 'https://1d1d618aac99cd49a8d37361a53f8a20@o4507077796495360.ingest.de.sentry.io/4507077807767632',
 });
+function App() {
+  React.useEffect(() => {
+    requestMultiple(
+      Platform.OS === 'ios'
+        ? [
+            PERMISSIONS.IOS.CAMERA,
+            PERMISSIONS.IOS.PHOTO_LIBRARY,
+            PERMISSIONS.IOS.LOCATION_WHEN_IN_USE,
+            PERMISSIONS.IOS.LOCATION_ALWAYS,
+          ]
+        : [
+            PERMISSIONS.ANDROID.CAMERA,
+            PERMISSIONS.ANDROID.ACCESS_MEDIA_LOCATION,
+            PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION,
+            PERMISSIONS.ANDROID.ACCESS_COARSE_LOCATION,
+          ],
+    ).then(statuses => {});
+  }, []);
+  React.useEffect(() => {
+    // handles deep link when app is already open
+    Linking.addEventListener('url', evt => {
+      console.log(evt.url);
+    });
 
-export default App;
+    // handles deep link when app is not already open
+    Linking.getInitialURL()
+      .then(url => console.log('Initial URL:', url))
+      .catch(console.warn);
+
+    return () => {
+      // clears listener when component unmounts
+      Linking.removeAllListeners('url');
+    };
+  }, []);
+  return (
+    <Provider store={store}>
+      {/* <SafeAreaProvider> */}
+      <StatusBar
+        backgroundColor={'#e53988'}
+        barStyle={Platform.OS === 'ios' ? 'dark-content' : 'light-content'}
+      />
+      <Index />
+      {/* </SafeAreaProvider> */}
+    </Provider>
+  );
+}
+
+export default Sentry.wrap(App);

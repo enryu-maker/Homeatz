@@ -1,0 +1,53 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "Src/Assets/Fonts/BalsamiqSans-Bold.ttf",
+      "sha1": "845b3feaa86d446f0935e3b9a36be732b656f4c0"
+    },
+    {
+      "path": "Src/Assets/Fonts/BalsamiqSans-BoldItalic.ttf",
+      "sha1": "273a8cac3628632a6666278f9205b7fbf547e7bb"
+    },
+    {
+      "path": "Src/Assets/Fonts/BalsamiqSans-Italic.ttf",
+      "sha1": "785446fa394fa61e843c00137364524b6cb4602c"
+    },
+    {
+      "path": "Src/Assets/Fonts/BalsamiqSans-Regular.ttf",
+      "sha1": "c5003c6efabd6b95ae60330ef3735a63b65d9ab9"
+    },
+    {
+      "path": "Src/Assets/Fonts/LEMONMILK-Bold.otf",
+      "sha1": "91cef6e742a3816c1f01f41ad039dc401bf6c968"
+    },
+    {
+      "path": "Src/Assets/Fonts/LEMONMILK-BoldItalic.otf",
+      "sha1": "0afd7b901fff4603896c33935a5b7aaab5da8635"
+    },
+    {
+      "path": "Src/Assets/Fonts/LEMONMILK-Light.otf",
+      "sha1": "9a56b6f3519f38b20e62973de1634cf10a636023"
+    },
+    {
+      "path": "Src/Assets/Fonts/LEMONMILK-LightItalic.otf",
+      "sha1": "e8902730a911b0f7f1937c49b806a9d0b066e961"
+    },
+    {
+      "path": "Src/Assets/Fonts/LEMONMILK-Medium.otf",
+      "sha1": "13e900f65b1351a8568cdbca55f72ed38ffae2a7"
+    },
+    {
+      "path": "Src/Assets/Fonts/LEMONMILK-MediumItalic.otf",
+      "sha1": "3e5e9eb1360b5dc00d8f8182e588d4b864fed44a"
+    },
+    {
+      "path": "Src/Assets/Fonts/LEMONMILK-Regular.otf",
+      "sha1": "1f660845f7fe40ee482aa7ccda7d101d20d870fa"
+    },
+    {
+      "path": "Src/Assets/Fonts/LEMONMILK-RegularItalic.otf",
+      "sha1": "0a9551423cf7bd907e4907716bbbd9f4a2c70de1"
+    }
+  ]
+}
