@@ -5,6 +5,7 @@ import {Provider} from 'react-redux';
 import {store} from './store';
 import {request, PERMISSIONS, requestMultiple} from 'react-native-permissions';
 import * as Sentry from '@sentry/react-native';
+import Index from './src/navigation/Index';
 
 Sentry.init({
   dsn: 'https://1d1d618aac99cd49a8d37361a53f8a20@o4507077796495360.ingest.de.sentry.io/4507077807767632',
@@ -45,13 +46,8 @@ function App() {
   }, []);
   return (
     <Provider store={store}>
-      {/* <SafeAreaProvider> */}
-      <StatusBar
-        backgroundColor={'#e53988'}
-        barStyle={Platform.OS === 'ios' ? 'dark-content' : 'light-content'}
-      />
-      {/* <Index /> */}
-      {/* </SafeAreaProvider> */}
+      <StatusBar backgroundColor={'#fff'} barStyle={'dark-content'} />
+      <Index />
     </Provider>
   );
 }

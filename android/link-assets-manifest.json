@@ -2,10 +2,6 @@
   "migIndex": 1,
   "data": [
     {
-      "path": "Src/Assets/Fonts/Nunito-Regular.ttf",
-      "sha1": "465c464793593babb53e51e2a56562cdd79c237d"
-    },
-    {
       "path": "Src/Assets/Fonts/SUSE-Bold.ttf",
       "sha1": "c984072338e2031aa3efb2d696741a5636ebb949"
     },

@@ -4,12 +4,20 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#29B675',
-        primarybg: '#559B7B',
+        green: '#5BB264',
+        darkGrey: '#393937',
+        blue: '#085DAD',
+        grey: '#f5f5f5',
+        lightGreen: '#EEF7E1',
+        lightPink: '#f7e1e1',
+        iconColor: '#E53988',
+        white: '#ffffff',
+        black: '#000',
+        logoPink: '#bc3061',
       },
       fontFamily: {
-        nunito: 'Nunito Regular',
-        suse: 'SUSE Regular',
+        suseR: 'SUSE-Regular',
+        suseB: 'SUSE-SemiBold',
       },
     },
   },

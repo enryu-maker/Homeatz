@@ -49,7 +49,6 @@
 	<false/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Nunito-Regular.ttf</string>
 		<string>SUSE-Bold.ttf</string>
 		<string>SUSE-ExtraBold.ttf</string>
 		<string>SUSE-ExtraLight.ttf</string>

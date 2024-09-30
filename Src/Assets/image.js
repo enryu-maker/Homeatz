@@ -21,4 +21,8 @@ export const images = {
   empty: require('./Images/empty-cart.png'),
   placed: require('./Images/placed.png'),
   share: require('./Images/share.png'),
+  cook: require('./Images/cook.png'),
+  bonus: require('./Images/bonus.png'),
+  back: require('./Images/back.png'),
+  login: require('./Images/login.jpg'),
 };
