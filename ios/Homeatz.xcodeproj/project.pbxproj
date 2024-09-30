@@ -15,18 +15,15 @@
 		548EF5A6A5FE3127CDB8FC9B /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 50C03FA9CA4DA1414FF6DE5E /* PrivacyInfo.xcprivacy */; };
 		7699B88040F8A987B510C191 /* libPods-Homeatz-HomeatzTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-Homeatz-HomeatzTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		9DA2302D30254CA4A177A3D9 /* LEMONMILK-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 47977A313C974C5A8B6BCE8C /* LEMONMILK-Bold.otf */; };
-		38A60D4B8B994DC49F20CBB1 /* LEMONMILK-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 462754C27610436F8D445FDA /* LEMONMILK-BoldItalic.otf */; };
-		BF18C56DC1C64829A94F5AAB /* LEMONMILK-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 735AFDEFBE12496495ED6E8F /* LEMONMILK-Light.otf */; };
-		2570BAFC3FC94171A3F50FCB /* LEMONMILK-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 19E67AE42A73416B92F4EC7E /* LEMONMILK-LightItalic.otf */; };
-		2D97C3D2A18947BC81E7D662 /* LEMONMILK-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = DD587C7DF3CF46A2A7B6E227 /* LEMONMILK-Medium.otf */; };
-		5E0FB659AF864A86AAADF53D /* LEMONMILK-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 78944A66D6CF43AD8EDB8475 /* LEMONMILK-MediumItalic.otf */; };
-		58F9AE394810483A82152B61 /* LEMONMILK-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A1E3653FF9854428993E12AB /* LEMONMILK-Regular.otf */; };
-		1AD703117ADB4D9ABC8C7740 /* LEMONMILK-RegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = BF66C00F309948C0B76DE58B /* LEMONMILK-RegularItalic.otf */; };
-		4E6FE580438841358002CFCD /* BalsamiqSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D7F094D9DFA4356A0E5193A /* BalsamiqSans-Bold.ttf */; };
-		5767D36E43D84C38A3FCE726 /* BalsamiqSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1E13C7E51BC84B20B39D1D5B /* BalsamiqSans-BoldItalic.ttf */; };
-		497CDD248F244DF9AF11AC2D /* BalsamiqSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3825FAD7746E4DD89D23EB20 /* BalsamiqSans-Italic.ttf */; };
-		C8E7D8481A0C469EAB6811D6 /* BalsamiqSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8FB384937AD46338CAB0B99 /* BalsamiqSans-Regular.ttf */; };
+		DBD69C9A6938461EA78D87AE /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B685F95E25C4427C966BAAF7 /* Nunito-Regular.ttf */; };
+		87652114B77E4A7C90BF0643 /* SUSE-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F30EBBF10BB40E8AF30FABF /* SUSE-Bold.ttf */; };
+		D2BBA6C3F2164530A9615976 /* SUSE-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE9B54C290CA4348B831E189 /* SUSE-ExtraBold.ttf */; };
+		6B9943B09A324997BE7228B1 /* SUSE-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 98CDF98FD3C643B88A3AF492 /* SUSE-ExtraLight.ttf */; };
+		0FF212D4BB8B47A0B1E8F57A /* SUSE-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A524A20045154359A1BF2552 /* SUSE-Light.ttf */; };
+		CDB107AB4AE54579AC3493D7 /* SUSE-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 574F2957D1F8438893C98B4F /* SUSE-Medium.ttf */; };
+		B5CA1722F2194C4EB17A83CA /* SUSE-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 74EA1643367E48EC8637FF9E /* SUSE-Regular.ttf */; };
+		A3D8EA4D1B05439EB485D3AE /* SUSE-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8CB50AFC2BA8438690774D97 /* SUSE-SemiBold.ttf */; };
+		E42B6C449B9B43F5BFEE3980 /* SUSE-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F6AD99B2760940DC863A3F34 /* SUSE-Thin.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,18 +56,15 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Homeatz/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-Homeatz-HomeatzTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Homeatz-HomeatzTests.release.xcconfig"; path = "Target Support Files/Pods-Homeatz-HomeatzTests/Pods-Homeatz-HomeatzTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		47977A313C974C5A8B6BCE8C /* LEMONMILK-Bold.otf */ = {isa = PBXFileReference; name = "LEMONMILK-Bold.otf"; path = "../Src/Assets/Fonts/LEMONMILK-Bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		462754C27610436F8D445FDA /* LEMONMILK-BoldItalic.otf */ = {isa = PBXFileReference; name = "LEMONMILK-BoldItalic.otf"; path = "../Src/Assets/Fonts/LEMONMILK-BoldItalic.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		735AFDEFBE12496495ED6E8F /* LEMONMILK-Light.otf */ = {isa = PBXFileReference; name = "LEMONMILK-Light.otf"; path = "../Src/Assets/Fonts/LEMONMILK-Light.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		19E67AE42A73416B92F4EC7E /* LEMONMILK-LightItalic.otf */ = {isa = PBXFileReference; name = "LEMONMILK-LightItalic.otf"; path = "../Src/Assets/Fonts/LEMONMILK-LightItalic.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		DD587C7DF3CF46A2A7B6E227 /* LEMONMILK-Medium.otf */ = {isa = PBXFileReference; name = "LEMONMILK-Medium.otf"; path = "../Src/Assets/Fonts/LEMONMILK-Medium.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		78944A66D6CF43AD8EDB8475 /* LEMONMILK-MediumItalic.otf */ = {isa = PBXFileReference; name = "LEMONMILK-MediumItalic.otf"; path = "../Src/Assets/Fonts/LEMONMILK-MediumItalic.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		A1E3653FF9854428993E12AB /* LEMONMILK-Regular.otf */ = {isa = PBXFileReference; name = "LEMONMILK-Regular.otf"; path = "../Src/Assets/Fonts/LEMONMILK-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		BF66C00F309948C0B76DE58B /* LEMONMILK-RegularItalic.otf */ = {isa = PBXFileReference; name = "LEMONMILK-RegularItalic.otf"; path = "../Src/Assets/Fonts/LEMONMILK-RegularItalic.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		6D7F094D9DFA4356A0E5193A /* BalsamiqSans-Bold.ttf */ = {isa = PBXFileReference; name = "BalsamiqSans-Bold.ttf"; path = "../Src/Assets/Fonts/BalsamiqSans-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		1E13C7E51BC84B20B39D1D5B /* BalsamiqSans-BoldItalic.ttf */ = {isa = PBXFileReference; name = "BalsamiqSans-BoldItalic.ttf"; path = "../Src/Assets/Fonts/BalsamiqSans-BoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		3825FAD7746E4DD89D23EB20 /* BalsamiqSans-Italic.ttf */ = {isa = PBXFileReference; name = "BalsamiqSans-Italic.ttf"; path = "../Src/Assets/Fonts/BalsamiqSans-Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		E8FB384937AD46338CAB0B99 /* BalsamiqSans-Regular.ttf */ = {isa = PBXFileReference; name = "BalsamiqSans-Regular.ttf"; path = "../Src/Assets/Fonts/BalsamiqSans-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B685F95E25C4427C966BAAF7 /* Nunito-Regular.ttf */ = {isa = PBXFileReference; name = "Nunito-Regular.ttf"; path = "../Src/Assets/Fonts/Nunito-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0F30EBBF10BB40E8AF30FABF /* SUSE-Bold.ttf */ = {isa = PBXFileReference; name = "SUSE-Bold.ttf"; path = "../Src/Assets/Fonts/SUSE-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DE9B54C290CA4348B831E189 /* SUSE-ExtraBold.ttf */ = {isa = PBXFileReference; name = "SUSE-ExtraBold.ttf"; path = "../Src/Assets/Fonts/SUSE-ExtraBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		98CDF98FD3C643B88A3AF492 /* SUSE-ExtraLight.ttf */ = {isa = PBXFileReference; name = "SUSE-ExtraLight.ttf"; path = "../Src/Assets/Fonts/SUSE-ExtraLight.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A524A20045154359A1BF2552 /* SUSE-Light.ttf */ = {isa = PBXFileReference; name = "SUSE-Light.ttf"; path = "../Src/Assets/Fonts/SUSE-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		574F2957D1F8438893C98B4F /* SUSE-Medium.ttf */ = {isa = PBXFileReference; name = "SUSE-Medium.ttf"; path = "../Src/Assets/Fonts/SUSE-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		74EA1643367E48EC8637FF9E /* SUSE-Regular.ttf */ = {isa = PBXFileReference; name = "SUSE-Regular.ttf"; path = "../Src/Assets/Fonts/SUSE-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8CB50AFC2BA8438690774D97 /* SUSE-SemiBold.ttf */ = {isa = PBXFileReference; name = "SUSE-SemiBold.ttf"; path = "../Src/Assets/Fonts/SUSE-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F6AD99B2760940DC863A3F34 /* SUSE-Thin.ttf */ = {isa = PBXFileReference; name = "SUSE-Thin.ttf"; path = "../Src/Assets/Fonts/SUSE-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,18 +175,15 @@
 		D01C834849C6462C9F09817F /* Resources */ = {
 			isa = "PBXGroup";
 			children = (
-				47977A313C974C5A8B6BCE8C /* LEMONMILK-Bold.otf */,
-				462754C27610436F8D445FDA /* LEMONMILK-BoldItalic.otf */,
-				735AFDEFBE12496495ED6E8F /* LEMONMILK-Light.otf */,
-				19E67AE42A73416B92F4EC7E /* LEMONMILK-LightItalic.otf */,
-				DD587C7DF3CF46A2A7B6E227 /* LEMONMILK-Medium.otf */,
-				78944A66D6CF43AD8EDB8475 /* LEMONMILK-MediumItalic.otf */,
-				A1E3653FF9854428993E12AB /* LEMONMILK-Regular.otf */,
-				BF66C00F309948C0B76DE58B /* LEMONMILK-RegularItalic.otf */,
-				6D7F094D9DFA4356A0E5193A /* BalsamiqSans-Bold.ttf */,
-				1E13C7E51BC84B20B39D1D5B /* BalsamiqSans-BoldItalic.ttf */,
-				3825FAD7746E4DD89D23EB20 /* BalsamiqSans-Italic.ttf */,
-				E8FB384937AD46338CAB0B99 /* BalsamiqSans-Regular.ttf */,
+				B685F95E25C4427C966BAAF7 /* Nunito-Regular.ttf */,
+				0F30EBBF10BB40E8AF30FABF /* SUSE-Bold.ttf */,
+				DE9B54C290CA4348B831E189 /* SUSE-ExtraBold.ttf */,
+				98CDF98FD3C643B88A3AF492 /* SUSE-ExtraLight.ttf */,
+				A524A20045154359A1BF2552 /* SUSE-Light.ttf */,
+				574F2957D1F8438893C98B4F /* SUSE-Medium.ttf */,
+				74EA1643367E48EC8637FF9E /* SUSE-Regular.ttf */,
+				8CB50AFC2BA8438690774D97 /* SUSE-SemiBold.ttf */,
+				F6AD99B2760940DC863A3F34 /* SUSE-Thin.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -294,18 +285,15 @@
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				548EF5A6A5FE3127CDB8FC9B /* PrivacyInfo.xcprivacy in Resources */,
-				9DA2302D30254CA4A177A3D9 /* LEMONMILK-Bold.otf in Resources */,
-				38A60D4B8B994DC49F20CBB1 /* LEMONMILK-BoldItalic.otf in Resources */,
-				BF18C56DC1C64829A94F5AAB /* LEMONMILK-Light.otf in Resources */,
-				2570BAFC3FC94171A3F50FCB /* LEMONMILK-LightItalic.otf in Resources */,
-				2D97C3D2A18947BC81E7D662 /* LEMONMILK-Medium.otf in Resources */,
-				5E0FB659AF864A86AAADF53D /* LEMONMILK-MediumItalic.otf in Resources */,
-				58F9AE394810483A82152B61 /* LEMONMILK-Regular.otf in Resources */,
-				1AD703117ADB4D9ABC8C7740 /* LEMONMILK-RegularItalic.otf in Resources */,
-				4E6FE580438841358002CFCD /* BalsamiqSans-Bold.ttf in Resources */,
-				5767D36E43D84C38A3FCE726 /* BalsamiqSans-BoldItalic.ttf in Resources */,
-				497CDD248F244DF9AF11AC2D /* BalsamiqSans-Italic.ttf in Resources */,
-				C8E7D8481A0C469EAB6811D6 /* BalsamiqSans-Regular.ttf in Resources */,
+				DBD69C9A6938461EA78D87AE /* Nunito-Regular.ttf in Resources */,
+				87652114B77E4A7C90BF0643 /* SUSE-Bold.ttf in Resources */,
+				D2BBA6C3F2164530A9615976 /* SUSE-ExtraBold.ttf in Resources */,
+				6B9943B09A324997BE7228B1 /* SUSE-ExtraLight.ttf in Resources */,
+				0FF212D4BB8B47A0B1E8F57A /* SUSE-Light.ttf in Resources */,
+				CDB107AB4AE54579AC3493D7 /* SUSE-Medium.ttf in Resources */,
+				B5CA1722F2194C4EB17A83CA /* SUSE-Regular.ttf in Resources */,
+				A3D8EA4D1B05439EB485D3AE /* SUSE-SemiBold.ttf in Resources */,
+				E42B6C449B9B43F5BFEE3980 /* SUSE-Thin.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

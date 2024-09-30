@@ -1,6 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
-import axiosIns, {baseURL, baseURL1} from '../Src/Helper/Helper';
+import axiosIns, {baseURL, baseURL1} from '../src/helper/Helper';
 import Toast from 'react-native-toast-message';
 import GetLocation from 'react-native-get-location';
 import PhonePePaymentSDK from 'react-native-phonepe-pg';

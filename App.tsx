@@ -2,8 +2,7 @@
 import {View, Text, StatusBar, Platform, Linking} from 'react-native';
 import React from 'react';
 import {Provider} from 'react-redux';
-import {store} from './Store';
-import Index from './Src/Navigation/Index';
+import {store} from './store';
 import {request, PERMISSIONS, requestMultiple} from 'react-native-permissions';
 import * as Sentry from '@sentry/react-native';
 
@@ -51,7 +50,7 @@ function App() {
         backgroundColor={'#e53988'}
         barStyle={Platform.OS === 'ios' ? 'dark-content' : 'light-content'}
       />
-      <Index />
+      {/* <Index /> */}
       {/* </SafeAreaProvider> */}
     </Provider>
   );

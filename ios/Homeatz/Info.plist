@@ -49,18 +49,15 @@
 	<false/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>LEMONMILK-Bold.otf</string>
-		<string>LEMONMILK-BoldItalic.otf</string>
-		<string>LEMONMILK-Light.otf</string>
-		<string>LEMONMILK-LightItalic.otf</string>
-		<string>LEMONMILK-Medium.otf</string>
-		<string>LEMONMILK-MediumItalic.otf</string>
-		<string>LEMONMILK-Regular.otf</string>
-		<string>LEMONMILK-RegularItalic.otf</string>
-		<string>BalsamiqSans-Bold.ttf</string>
-		<string>BalsamiqSans-BoldItalic.ttf</string>
-		<string>BalsamiqSans-Italic.ttf</string>
-		<string>BalsamiqSans-Regular.ttf</string>
+		<string>Nunito-Regular.ttf</string>
+		<string>SUSE-Bold.ttf</string>
+		<string>SUSE-ExtraBold.ttf</string>
+		<string>SUSE-ExtraLight.ttf</string>
+		<string>SUSE-Light.ttf</string>
+		<string>SUSE-Medium.ttf</string>
+		<string>SUSE-Regular.ttf</string>
+		<string>SUSE-SemiBold.ttf</string>
+		<string>SUSE-Thin.ttf</string>
 	</array>
 </dict>
 </plist>
