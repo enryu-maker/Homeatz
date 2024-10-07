@@ -7,28 +7,62 @@ import {
   StatusBar,
 } from 'react-native';
 import React from 'react';
-import {images} from '../../../assets/image';
+import { images } from '../../../assets/image';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import ImagePicker from 'react-native-image-crop-picker';
-import {useDispatch, useSelector} from 'react-redux';
-import {getCountryCode} from '../../../../store/actions';
-export default function Register({navigation, route}) {
+import { useDispatch, useSelector } from 'react-redux';
+import { getCountryCode, RegisterAction } from '../../../../store/actions';
+export default function Register({ navigation, route }) {
   const [countrycode, setCountrycode] = React.useState(null);
   const [show, setShow] = React.useState(false);
   const location = useSelector(state => state.Reducers.location);
-  console.log(location);
+  const [image, setImage] = React.useState(null);
+  const [imageError, setImageError] = React.useState(false);
+  const [loading, setLoading] = React.useState(false);
+
+  const [data, setData] = React.useState({
+    full_name: "",
+    phone: "",
+    email: "",
+    password: ""
+  });
   const dispatch = useDispatch();
   React.useEffect(() => {
-    dispatch(getCountryCode(location.country, setCountrycode));
-  }, []);
+    dispatch(getCountryCode(location?.country, setCountrycode));
+  }, [dispatch]);
+
+  const pickImage = async () => {
+    let result = await ImagePicker.openPicker({
+      width: 300,
+      height: 300,
+      cropping: true,
+      compressImageQuality: 0.7,
+
+    });
+
+    if (result.cancelled) {
+      setImageError(true);
+    }
+
+    if (!result.cancelled) {
+      const newImageUri = Platform.OS === "ios" ? 'file:///' + result?.sourceURL.split('file:/').join('') : 'file:///' + result?.path.split('file:/').join('')
+      const uriParts = result?.path?.split('.')
+      const fileType = uriParts[uriParts.length - 1];
+      setImage({
+        type: `image/${fileType}`,
+        uri: result?.path,
+        name: `photo.${fileType}`
+      });
+      setImageError(false);
+    }
+  };
   return (
     <View className=" flex-1 bg-white w-full justify-start items-center">
       <StatusBar
         barStyle="dark-content"
         hidden={false}
         backgroundColor="#fff"
-        // translucent={true}
       />
       <View className="flex-row w-[100%] px-2 h-[50px] items-center justify-between ">
         <TouchableOpacity
@@ -42,11 +76,59 @@ export default function Register({navigation, route}) {
         </Text>
         <TouchableOpacity className="w-5 h-5"></TouchableOpacity>
       </View>
-      {/* <Image className="w-full h-[35%] object-cover" source={images.login} /> */}
-      <View className="px-4 w-full mt-5  bottom-0 justify-evenly items-center bg-white h-[75%] absolute ">
+      <View className="px-4 w-full mt-5  bottom-0 justify-evenly items-center bg-white h-[90%] absolute ">
+        <View
+          className=' justify-center items-center'
+        >
+          <TouchableOpacity onPress={pickImage}>
+            <View
+              className=' justify-center items-center'
+            >
+              {image ? (
+                <View>
+                  <Image
+                    source={{ uri: image?.uri }}
+                    className='w-[140px] h-[140px] border rounded-full justify-center items-center text-center'
+                    resizeMode='cover'
+                  />
+                </View>
+              ) : (
+                <View
+                  className='w-[140px] h-[140px] border rounded-full justify-center items-center text-center'
+
+                >
+                  <FontAwesome
+                    style={{ textAlign: 'center' }}
+                    name='user'
+                    size={45}
+                    color='#989898'
+                  />
+                </View>
+              )}
+            </View>
+            <View
+              className=' mb-[2%]'
+            >
+              <Text
+
+                className=' text-center font-suseR'
+              >
+                Upload your display pic*
+              </Text>
+              {image === null && (
+                <Text
+
+                  className=' text-red-500 text-sm text-center'
+                >
+                  Image is compulsory
+                </Text>
+              )}
+            </View>
+          </TouchableOpacity>
+        </View>
         <View className="w-[100%]">
           <Text className="text-lg font-suseR text-start text-gray-500 ">
-            Name
+            Name*
           </Text>
           <TextInput
             autoCapitalize="none"
@@ -59,7 +141,7 @@ export default function Register({navigation, route}) {
         </View>
         <View className="w-[100%]">
           <Text className="text-lg font-suseR text-start text-gray-500 ">
-            Email
+            Email*
           </Text>
           <TextInput
             autoCapitalize="none"
@@ -72,11 +154,11 @@ export default function Register({navigation, route}) {
         </View>
         <View className="w-[100%]">
           <Text className="text-lg font-suseR text-start text-gray-500">
-            Mobile Number
+            Mobile Number*
           </Text>
           <View className="w-full h-13 flex-row items-center justify-between px-4 text-lg font-suseR bg-white border outline outline-logoPink rounded-md mt-2">
-            <TouchableOpacity>
-              <Text>{countrycode}</Text>
+            <TouchableOpacity className='w-[8%]'>
+              <Text className=' font-bold font-suseR'>{countrycode}</Text>
             </TouchableOpacity>
             <TextInput
               autoCapitalize="none"
@@ -92,7 +174,7 @@ export default function Register({navigation, route}) {
         </View>
         <View className="w-[100%]">
           <Text className="text-lg font-suseR text-start text-gray-500">
-            Password
+            Password*
           </Text>
           <View className="w-full h-13 flex-row items-center justify-between px-4 text-lg font-suseR bg-white border outline outline-logoPink rounded-md mt-2">
             <TextInput
@@ -116,7 +198,13 @@ export default function Register({navigation, route}) {
             </TouchableOpacity>
           </View>
         </View>
-        <TouchableOpacity className="w-[100%] justify-center rounded-md bg-logoPink h-[50px] items-center">
+        <TouchableOpacity
+          onPress={() => {
+            data['is_chef'] = route?.params?.chef ? 1 : 0;
+            data['profile_photo'] = image;
+            dispatch(RegisterAction(setLoading, data, navigation))
+          }}
+          className="w-[100%] justify-center rounded-md bg-logoPink h-[50px] items-center">
           <Text className="text-2xl font-suseR text-center text-white ">
             {route?.params?.chef ? 'Chef Register' : 'Customer Register'}
           </Text>

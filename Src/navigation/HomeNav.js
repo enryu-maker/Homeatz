@@ -1,5 +1,5 @@
 import React from 'react';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Onboard from '../pages/customer/screens/Onboard';
 import Login from '../pages/customer/screens/Login';
 import Register from '../pages/customer/screens/Register';
@@ -8,9 +8,10 @@ import {
   getLocation,
   getPopularAction,
 } from '../../store/actions';
-import {Platform, View, Text} from 'react-native';
-import {useDispatch, useSelector} from 'react-redux';
-import {ActivityIndicator} from 'react-native-paper';
+import { Platform, View, Text } from 'react-native';
+import { useDispatch, useSelector } from 'react-redux';
+import { ActivityIndicator } from 'react-native-paper';
+import Home from '../pages/customer/screens/Home';
 const Stack = createNativeStackNavigator();
 export default function HomeNav() {
   const dispatch = useDispatch();
@@ -37,7 +38,7 @@ export default function HomeNav() {
 
   if (loading) {
     return (
-      <View className=" flex-1 justify-center items-center text-logoPink">
+      <View className=" flex-1 justify-center bg-white items-center text-logoPink">
         <ActivityIndicator size={'large'} color={'#bc3061'} />
         <Text className=" text-lg text-darkGrey text-center font-suseR">
           Fetching Your Current Location
@@ -47,7 +48,7 @@ export default function HomeNav() {
   } else {
     return (
       <Stack.Navigator
-        screenOptions={({navigation}) => {
+        screenOptions={({ navigation }) => {
           return {
             detachPreviousScreen: !navigation.isFocused(),
             headerShown: false,
@@ -55,10 +56,11 @@ export default function HomeNav() {
             onTransitionStart: () => Keyboard.dismiss(),
           };
         }}
-        initialRouteName={'Onboard'}>
+        initialRouteName={'Drawer'}>
         <Stack.Screen name="Onboard" component={Onboard} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Register" component={Register} />
+        <Stack.Screen name="Home" component={Home} />
       </Stack.Navigator>
     );
   }

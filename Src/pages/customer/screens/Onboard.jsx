@@ -1,11 +1,15 @@
-import {View, Text, Image, TouchableOpacity} from 'react-native';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
 import React from 'react';
-import {images} from '../../../assets/image';
+import { images } from '../../../assets/image';
 
-export default function Onboard({navigation}) {
+export default function Onboard({ navigation }) {
   return (
     <View className=" flex-1 bg-white w-full justify-center items-center">
-      <TouchableOpacity className=" absolute top-5 right-5 w-[70px] rounded-full py-1 bg-slate-200">
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate('Home');
+        }}
+        className=" absolute top-5 right-5 w-[70px] rounded-full py-1 bg-slate-200">
         <Text className=" text-center font-suseR">skip</Text>
       </TouchableOpacity>
       <Image
@@ -25,7 +29,7 @@ export default function Onboard({navigation}) {
             }}>
             <Image
               source={images.bonus}
-              className="w-[110px] h-[110px] bg-white object-cover   rounded-full"
+              className="w-[110px] h-[110px] border bg-white object-cover   rounded-full"
             />
             <Text className="text-xl font-suseR  text-white text-center">
               Customer
@@ -39,7 +43,7 @@ export default function Onboard({navigation}) {
             }}>
             <Image
               source={images?.cook}
-              className="w-[110px] h-[110px] bg-white   rounded-full"
+              className="w-[110px] h-[110px] border bg-white   rounded-full"
             />
             <Text className="text-xl font-suseR  text-white text-center">
               Chef
