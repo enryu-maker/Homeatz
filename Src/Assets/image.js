@@ -25,4 +25,6 @@ export const images = {
   bonus: require('./Images/bonus.png'),
   back: require('./Images/back.png'),
   login: require('./Images/login.jpg'),
+  delivery: require('./Images/delivery.png'),
+  banquet: require('./Images/banquet.png'),
 };

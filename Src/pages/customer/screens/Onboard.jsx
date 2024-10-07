@@ -7,7 +7,7 @@ export default function Onboard({ navigation }) {
     <View className=" flex-1 bg-white w-full justify-center items-center">
       <TouchableOpacity
         onPress={() => {
-          navigation.navigate('Home');
+          navigation.navigate('Tab');
         }}
         className=" absolute top-5 right-5 w-[70px] rounded-full py-1 bg-slate-200">
         <Text className=" text-center font-suseR">skip</Text>

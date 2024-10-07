@@ -12,6 +12,7 @@ import { Platform, View, Text } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { ActivityIndicator } from 'react-native-paper';
 import Home from '../pages/customer/screens/Home';
+import Tab from './Tab';
 const Stack = createNativeStackNavigator();
 export default function HomeNav() {
   const dispatch = useDispatch();
@@ -60,7 +61,7 @@ export default function HomeNav() {
         <Stack.Screen name="Onboard" component={Onboard} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Register" component={Register} />
-        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Tab" component={Tab} />
       </Stack.Navigator>
     );
   }
