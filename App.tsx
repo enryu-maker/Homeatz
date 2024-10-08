@@ -1,12 +1,20 @@
 // import 'react-native-gesture-handler';
-import {View, Text, StatusBar, Platform, Linking} from 'react-native';
+import {
+  View,
+  Text,
+  StatusBar,
+  Platform,
+  Linking,
+  SafeAreaView,
+} from 'react-native';
 import React from 'react';
 import {Provider} from 'react-redux';
 import {store} from './store';
 import {request, PERMISSIONS, requestMultiple} from 'react-native-permissions';
 import * as Sentry from '@sentry/react-native';
 import Index from './src/navigation/Index';
-
+import Toast from 'react-native-toast-message';
+import {toastConfig} from './src/pages/customer/components/ToastConfig';
 Sentry.init({
   dsn: 'https://1d1d618aac99cd49a8d37361a53f8a20@o4507077796495360.ingest.de.sentry.io/4507077807767632',
 });
@@ -48,6 +56,7 @@ function App() {
     <Provider store={store}>
       <StatusBar backgroundColor={'#fff'} barStyle={'dark-content'} />
       <Index />
+      <Toast config={toastConfig} />
     </Provider>
   );
 }

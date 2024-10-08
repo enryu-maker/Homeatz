@@ -8,6 +8,7 @@ const initialState = {
   dealtype: [],
   menutype: [],
   cart: [],
+  cart2: [],
   tempAddress: [],
   active: null,
   profileCreated: false,
@@ -88,6 +89,37 @@ export default (state = initialState, action) => {
         ...state,
         cart: state.cart.filter((item) => item.id !== action.payload.id).concat(action.payload),
       };
+    case "ADD_TO_CART2":
+      const existingKitchen = state.cart2.find(k => k.kitchen_id === action.payload.kitchen_id);
+
+      if (existingKitchen) {
+        // If kitchen already exists, update its cart
+        return {
+          ...state,
+          cart2: state.cart2.map(k => {
+            if (k.kitchen_id === action.payload.kitchen_id) {
+              return {
+                ...k,
+                cart: k.cart.filter(item => item.id !== action.payload.cart.id).concat(action.payload.cart)
+              };
+            }
+            return k; // Return unchanged kitchen object
+          })
+        };
+      } else {
+        // If kitchen does not exist, create a new kitchen object
+        return {
+          ...state,
+          cart2: [
+            ...state.cart2,
+            {
+              kitchen_id: action.payload.kitchen_id,
+              cart: [action.payload.cart]
+            }
+          ]
+        };
+      }
+
     case "ADD_TEMP_ADDRESS":
       return {
         ...state,
@@ -101,8 +133,17 @@ export default (state = initialState, action) => {
     case "REMOVE_FROM_CART":
       return {
         ...state,
-        cart: state.cart.filter((item) => item.id !== action.payload),
+        cart2: state.cart2.map(k => {
+          if (k.kitchen_id === action.payload.kitchen_id) {
+            return {
+              ...k,
+              cart: k.cart.filter(item => item.id !== action.payload.item_id) // Remove item from the cart
+            };
+          }
+          return k; // Return unchanged kitchen object if it doesn't match
+        })
       };
+
     case "EMPTY_CART":
       return {
         ...state,
@@ -111,7 +152,20 @@ export default (state = initialState, action) => {
     case "CHANGE_QUANTITY":
       return {
         ...state,
-        cart: action.payload,
+        cart2: state.cart2.map(k => {
+          if (k.kitchen_id === action.payload.kitchen_id) {
+            return {
+              ...k,
+              cart: k.cart.map(item => {
+                if (item.id === action.payload.cart.id) {
+                  return { ...item, count: action.payload.cart.count }; // Update the count for the matching item
+                }
+                return item; // Return unchanged item if it doesn't match
+              })
+            };
+          }
+          return k; // Return unchanged kitchen object
+        })
       };
     case "LOGOUT":
       return {

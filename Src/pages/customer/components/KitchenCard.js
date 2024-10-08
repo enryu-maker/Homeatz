@@ -1,4 +1,4 @@
-import { View, Text, Image } from 'react-native'
+import { View, Text, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 
 export default function KitchenCard({
@@ -9,7 +9,13 @@ export default function KitchenCard({
     id
 }) {
     return (
-        <View className='w-[92%] shadow-xl border border-gray-100 shadow-gray-400 bg-white flex-row items-center justify-evenly rounded-xl mb-5 self-center h-[150px]'>
+        <TouchableOpacity
+            onPress={() => {
+                navigation.navigate("ChefInfo", {
+                    id: id
+                });
+            }}
+            className='w-[92%] border border-gray-200  bg-white flex-row items-center justify-evenly rounded-xl mb-5 self-center h-[120px]'>
             <Image
                 className="w-20 h-20 rounded-full border-2 border-gray-300"
                 source={{ uri: img }}
@@ -18,8 +24,8 @@ export default function KitchenCard({
                 <Text className='text-lg text-black font-suseB'>{name}</Text>
                 <Text className='text-sm text-black font-suseR'>{name}</Text>
 
-                <Text className='text-md text-gray-600 font-suseR'>{Math.round(distance)} KM Away</Text>
+                <Text className='text-md text-iconColor font-suseR'>{Math.round(distance)} km Away</Text>
             </View>
-        </View>
+        </TouchableOpacity>
     )
 }

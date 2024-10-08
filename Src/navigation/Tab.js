@@ -58,7 +58,7 @@ export default function Tab() {
                     // border: 'none',
                     // position: "absolute",
                     backgroundColor: "#fff",
-                    height: 70,
+                    height: Platform.OS === "ios" ? 97 : 80,
                     justifyContent: "space-evenly",
                     alignItems: "center",
                     // borderRadius: 100,

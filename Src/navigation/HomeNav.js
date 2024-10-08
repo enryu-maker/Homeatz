@@ -13,6 +13,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ActivityIndicator } from 'react-native-paper';
 import Home from '../pages/customer/screens/Home';
 import Tab from './Tab';
+import ChefInfo from '../pages/customer/screens/ChefInfo';
+import FoodInfo from '../pages/customer/screens/FoodInfo';
+import Cart from '../pages/customer/screens/Cart';
+import Search from '../pages/customer/screens/Search';
 const Stack = createNativeStackNavigator();
 export default function HomeNav() {
   const dispatch = useDispatch();
@@ -62,6 +66,10 @@ export default function HomeNav() {
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Register" component={Register} />
         <Stack.Screen name="Tab" component={Tab} />
+        <Stack.Screen name="ChefInfo" component={ChefInfo} />
+        <Stack.Screen name="FoodInfo" component={FoodInfo} />
+        <Stack.Screen name="Cart" component={Cart} />
+        <Stack.Screen name="Search" component={Search} />
       </Stack.Navigator>
     );
   }
