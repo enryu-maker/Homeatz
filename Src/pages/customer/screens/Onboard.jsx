@@ -16,7 +16,7 @@ export default function Onboard({ navigation }) {
           onPress={() => {
             navigation.navigate('Tab');
           }}
-          className=" absolute top-10 right-5 w-[100px] rounded-full py-1 bg-slate-200">
+          className=" absolute top-12 right-5 w-[100px] rounded-full py-1 bg-slate-200">
           <Text className=" text-center text-lg font-suseR">skip</Text>
         </TouchableOpacity>
         <Image

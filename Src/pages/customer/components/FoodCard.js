@@ -133,6 +133,8 @@ export default function FoodCard({
                                             count: count + 1,
                                             image: item?.image,
                                             description: item?.description,
+                                            is_veg: item?.is_veg,
+                                            todays_limit: item?.todays_limit
                                         }
 
                                     }

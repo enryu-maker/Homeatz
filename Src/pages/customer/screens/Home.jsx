@@ -40,7 +40,7 @@ export default function Home({
                 backgroundColor="#ffffff"
                 translucent={true}
             />
-            <SafeAreaView className='flex-1 bg-white w-full h-full justify-start items-center'>
+            <SafeAreaView className={`flex-1 bg-white w-full h-full justify-start items-center ${Platform.OS === "ios" ? "" : "mt-[45px]"}`}>
                 <View
                     className='w-[100%] h-[50px] justify-between px-4 flex-row items-center '>
                     <View className='w-[70%] flex-row space-x-5 items-center '>

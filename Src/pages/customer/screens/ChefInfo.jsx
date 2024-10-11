@@ -1,4 +1,4 @@
-import { View, Text, Image, FlatList, Linking, TouchableOpacity, ActivityIndicator, StatusBar, SafeAreaView } from 'react-native'
+import { View, Text, Image, FlatList, Linking, TouchableOpacity, ActivityIndicator, StatusBar, SafeAreaView, Platform } from 'react-native'
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { getChef, getChefMenuAction, getCurrencyCode } from '../../../../store/actions';
@@ -116,7 +116,7 @@ export default function ChefInfo({
                 backgroundColor="#ffffff"
                 translucent={true}
             />
-            <SafeAreaView className='flex-1 bg-white w-full h-full justify-start items-center'>
+            <SafeAreaView className={`flex-1 bg-white w-full h-full justify-start items-center ${Platform.OS === "ios" ? "" : "mt-[45px]"}`}>
                 {
                     initialUrl ?
                         <TouchableOpacity

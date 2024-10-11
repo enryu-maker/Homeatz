@@ -19,12 +19,12 @@ export default function More({
     return (
         <View className=" flex-1">
             <StatusBar
-                barStyle="dark-content"
+                barStyle="light-content"
                 hidden={false}
                 backgroundColor={"#e53988"}
                 translucent={true}
             />
-            <SafeAreaView className='flex-1 bg-white w-full h-full justify-start items-center'>
+            <SafeAreaView className={`flex-1 bg-white w-full h-full justify-start items-center ${Platform.OS === "ios" ? "" : "mt-[45px]"}`}>
 
                 {
                     access ?
@@ -119,7 +119,7 @@ export default function More({
                                 Version : 1.2
                             </Text>
                             <Text className='text-gray-400 text-left w-full bottom-0 p-5 absolute text-2xl font-suseB'>
-                                Food's made with <Text className=' text-iconColor'>LOVE</Text>
+                                food made with <Text className=' text-iconColor'>LOVE</Text>
                             </Text>
                         </>
                 }

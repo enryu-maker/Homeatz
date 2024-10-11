@@ -17,6 +17,11 @@ import ChefInfo from '../pages/customer/screens/ChefInfo';
 import FoodInfo from '../pages/customer/screens/FoodInfo';
 import Cart from '../pages/customer/screens/Cart';
 import Search from '../pages/customer/screens/Search';
+import AboutScreen from '../constants/About';
+import Contact from '../constants/Contact';
+import Data from '../constants/Data';
+import Faq from '../constants/Faq';
+import Terms from '../constants/Terms';
 const Stack = createNativeStackNavigator();
 export default function HomeNav() {
   const dispatch = useDispatch();
@@ -70,6 +75,12 @@ export default function HomeNav() {
         <Stack.Screen name="FoodInfo" component={FoodInfo} />
         <Stack.Screen name="Cart" component={Cart} />
         <Stack.Screen name="Search" component={Search} />
+        <Stack.Screen name="About" component={AboutScreen} />
+        <Stack.Screen name="Contact" component={Contact} />
+        <Stack.Screen name="Data" component={Data} />
+        <Stack.Screen name="FAQ" component={Faq} />
+        <Stack.Screen name="Terms" component={Terms} />
+
       </Stack.Navigator>
     );
   }

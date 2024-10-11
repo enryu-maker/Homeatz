@@ -69,7 +69,7 @@ export default function FoodInfo({
                 backgroundColor="#ffffff"
                 translucent={true}
             />
-            <SafeAreaView className='flex-1 bg-white w-full h-full justify-start items-center'>
+            <SafeAreaView className={`flex-1 bg-white w-full h-full justify-start items-center ${Platform.OS === "ios" ? "" : "mt-[45px]"}`}>
                 {
                     initialUrl ?
                         <TouchableOpacity

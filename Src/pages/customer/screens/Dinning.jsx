@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getActiveAddress, getBannerAction, getNearbyChefAction, getPopularAction, getTopRated } from '../../../../store/actions';
 import Entypo from 'react-native-vector-icons/Entypo';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import { images } from '../../../assets/image';
 
 export default function Dinning() {
     const [loading, setLoading] = React.useState(false)
@@ -57,6 +58,7 @@ export default function Dinning() {
                         />
                     </TouchableOpacity>
                 </View>
+                <Image source={images.pickup} className='w-screen h-[200px] object-cover' />
             </SafeAreaView>
         </View>
     )
