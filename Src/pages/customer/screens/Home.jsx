@@ -8,7 +8,8 @@ import Carousel from 'react-native-reanimated-carousel';
 import CircularCard from '../components/CircularCard';
 import CircularFoodCard from '../components/CircleFoodCard';
 import KitchenCard from '../components/KitchenCard';
-
+import { animation } from '../../../assets/animation';
+import LottieView from 'lottie-react-native';
 export default function Home({
     navigation
 }) {
@@ -41,128 +42,162 @@ export default function Home({
                 translucent={true}
             />
             <SafeAreaView className={`flex-1 bg-white w-full h-full justify-start items-center ${Platform.OS === "ios" ? "" : "mt-[45px]"}`}>
-                <View
-                    className='w-[100%] h-[50px] justify-between px-4 flex-row items-center '>
-                    <View className='w-[70%] flex-row space-x-5 items-center '>
-                        <Entypo
-                            name='location'
-                            size={26}
-                            color='#bc3061'
-                        />
-                        <View className='w-[100px]'>
-                            <Text className='text-lg font-suseB text-gray-600'>{location?.city}</Text>
-                            <Text className='text-xs font-suseB text-gray-400 '>{location?.pin_code}</Text>
+                {
+                    loading ?
+                        <View className=" flex-1 justify-center bg-white items-center text-logoPink">
+                            <LottieView
+                                source={animation.food} // Add your Lottie file path here
+                                autoPlay
+                                loop
+                                style={{ width: 100, height: 100 }}// Adjust size as needed
+                            />
                         </View>
-                    </View>
-                    <TouchableOpacity
-                        onPress={() => {
-                            navigation.navigate('Search')
-                        }}
-                    >
-                        <FontAwesome
-                            name='search'
-                            size={26}
-                            color='#bc3061'
-                        />
-                    </TouchableOpacity>
-                </View>
-                <ScrollView>
-
-                    <Carousel
-                        loop
-                        mode="parallax"
-                        pagingEnabled={true}
-                        autoplayInterval={5000}
-                        scrollAnimationDuration={1000}
-                        autoPlay={true}
-                        data={banner}
-                        renderItem={({ item, index }) => {
-                            return (
-                                <Image
-                                    source={{ uri: item['img'].uri }}
-                                    className=" h-[250px] w-full "
-                                    resizeMode='contain'
+                        :
+                        <>
+                            <View
+                                className='w-[100%] h-[50px] justify-between px-4 flex-row items-center '>
+                                <View className='w-[70%] flex-row space-x-5 items-center '>
+                                    <Entypo
+                                        name='location'
+                                        size={26}
+                                        color='#bc3061'
+                                    />
+                                    <View className='w-[100px]'>
+                                        <Text className='text-lg font-suseB text-gray-600'>{location?.city}</Text>
+                                        <Text className='text-xs font-suseB text-gray-400 '>{location?.pin_code}</Text>
+                                    </View>
+                                </View>
+                                <TouchableOpacity
+                                    onPress={() => {
+                                        navigation.navigate('Search')
+                                    }}
+                                >
+                                    <FontAwesome
+                                        name='search'
+                                        size={26}
+                                        color='#bc3061'
+                                    />
+                                </TouchableOpacity>
+                            </View>
+                            <ScrollView>
+                                <Carousel
+                                    loop
+                                    mode="parallax"
+                                    pagingEnabled={true}
+                                    autoplayInterval={5000}
+                                    scrollAnimationDuration={1000}
+                                    autoPlay={true}
+                                    data={banner}
+                                    renderItem={({ item, index }) => {
+                                        return (
+                                            <Image
+                                                source={{ uri: item['img'].uri }}
+                                                className=" h-[250px] w-full "
+                                                resizeMode='contain'
+                                            />
+                                        );
+                                    }}
+                                    width={width}
+                                    height={width / 2}
+                                    onSnapToItem={index => setIndex(index)}
                                 />
-                            );
-                        }}
-                        width={width}
-                        height={width / 2}
-                        onSnapToItem={index => setIndex(index)}
-                    />
-                    <View className=' w-screen flex items-center flex-row justify-evenly mt-5 '>
-                        <View className='w-[25%] h-[2px] bg-slate-200' />
-                        <Text className='text-xl font-suseR text-gray-800 '>Popular Dishes</Text>
-                        <View className='w-[25%] h-[2px] bg-slate-200' />
-                    </View>
-                    <FlatList
-                        disableVirtualization={false}
-                        data={top}
-                        className=' w-screen h-auto '
-                        renderItem={({ item, index }) => {
-                            return (
-                                <CircularFoodCard
-                                    name={item.name}
-                                    img={item.icon}
-                                    id={item.id}
-                                    navigation={navigation}
-                                />
-                            );
-                        }}
-                        keyExtractor={(item, index) => index.toString()}
-                        horizontal={false}
-                        numColumns={3}
-                        showsVerticalScrollIndicator={false}
-                        showsHorizontalScrollIndicator={false}
-                        contentContainerStyle={{
-                            justifyContent: 'space-evenly',
-                            alignItems: 'center',
+                                <View className=' w-screen flex items-center flex-row justify-evenly mt-5 '>
+                                    <View className='w-[25%] h-[2px] bg-slate-200' />
+                                    <Text className='text-xl font-suseR text-gray-800 '>Popular Dishes</Text>
+                                    <View className='w-[25%] h-[2px] bg-slate-200' />
+                                </View>
+                                <FlatList
+                                    disableVirtualization={false}
+                                    data={top}
+                                    className=' w-screen h-auto '
+                                    renderItem={({ item, index }) => {
+                                        return (
+                                            <CircularFoodCard
+                                                name={item.name}
+                                                img={item.icon}
+                                                id={item.id}
+                                                navigation={navigation}
+                                            />
+                                        );
+                                    }}
+                                    keyExtractor={(item, index) => index.toString()}
+                                    horizontal={false}
+                                    numColumns={3}
+                                    showsVerticalScrollIndicator={false}
+                                    showsHorizontalScrollIndicator={false}
+                                    contentContainerStyle={{
+                                        justifyContent: 'space-evenly',
+                                        alignItems: 'center',
 
-                        }}
-                    />
-                    <View className=' w-screen flex items-center flex-row justify-evenly mt-5 '>
-                        <View className='w-[25%] h-[2px] bg-slate-200' />
-                        <Text className='text-xl font-suseR text-gray-800 '>Popular Chefs</Text>
-                        <View className='w-[25%] h-[2px] bg-slate-200' />
-                    </View>
-                    <FlatList
-                        disableVirtualization={false}
-                        data={popular}
-                        className=' w-screen h-auto '
-                        renderItem={({ item, index }) => {
-                            return (
-                                <CircularCard
-                                    name={item.name}
-                                    img={item.icon}
-                                    id={item.id}
-                                    navigation={navigation}
+                                    }}
                                 />
-                            );
-                        }}
-                        keyExtractor={(item, index) => index.toString()}
-                        horizontal={false}
-                        numColumns={3}
-                        showsVerticalScrollIndicator={false}
-                        showsHorizontalScrollIndicator={false}
-                        contentContainerStyle={{
-                            justifyContent: 'space-evenly',
-                            alignItems: 'center',
+                                <View className=' w-screen flex items-center flex-row justify-evenly mt-5 '>
+                                    <View className='w-[25%] h-[2px] bg-slate-200' />
+                                    <Text className='text-xl font-suseR text-gray-800 '>Popular Chefs</Text>
+                                    <View className='w-[25%] h-[2px] bg-slate-200' />
+                                </View>
+                                <FlatList
+                                    disableVirtualization={false}
+                                    data={popular}
+                                    className=' w-screen h-auto '
+                                    renderItem={({ item, index }) => {
+                                        return (
+                                            <CircularCard
+                                                name={item.name}
+                                                img={item.icon}
+                                                id={item.id}
+                                                navigation={navigation}
+                                            />
+                                        );
+                                    }}
+                                    keyExtractor={(item, index) => index.toString()}
+                                    horizontal={false}
+                                    numColumns={3}
+                                    showsVerticalScrollIndicator={false}
+                                    showsHorizontalScrollIndicator={false}
+                                    contentContainerStyle={{
+                                        justifyContent: 'space-evenly',
+                                        alignItems: 'center',
 
-                        }}
-                    />
-                    <View className=' w-screen flex items-center flex-row justify-evenly mt-5 '>
-                        <View className='w-[25%] h-[2px] bg-slate-200' />
-                        <Text className='text-xl font-suseR text-gray-800 '>All Kitchen</Text>
-                        <View className='w-[25%] h-[2px] bg-slate-200' />
-                    </View>
-                    <Text className='text-xl font-suseR text-gray-800  px-5 py-3'>{chefs?.length} Kitchen near you</Text>
-                    <KitchenCard
-                        name={chefs[0]?.name}
-                        img={chefs[0]?.icon}
-                        id={chefs[0]?.id}
-                        distance={chefs[0]?.distance}
-                        navigation={navigation}
-                    />
-                </ScrollView>
+                                    }}
+                                />
+                                <View className=' w-screen flex items-center flex-row justify-evenly mt-5 '>
+                                    <View className='w-[25%] h-[2px] bg-slate-200' />
+                                    <Text className='text-xl font-suseR text-gray-800 '>All Kitchen</Text>
+                                    <View className='w-[25%] h-[2px] bg-slate-200' />
+                                </View>
+                                <Text className='text-xl font-suseR text-gray-800  px-5 py-3'>{chefs?.length} Kitchen near you</Text>
+                                <FlatList
+                                    disableVirtualization={false}
+                                    data={chefs}
+                                    className=' w-screen h-auto '
+                                    renderItem={({ item, index }) => {
+                                        return (
+                                            <KitchenCard
+                                                name={chefs?.name}
+                                                img={chefs?.icon}
+                                                id={chefs?.id}
+                                                distance={chefs?.distance}
+                                                navigation={navigation}
+                                            />
+                                        );
+                                    }}
+                                    keyExtractor={(item, index) => index.toString()}
+                                    // horizontal={false}
+                                    // numColumns={3}
+                                    showsVerticalScrollIndicator={false}
+                                    showsHorizontalScrollIndicator={false}
+                                    contentContainerStyle={{
+                                        justifyContent: 'space-evenly',
+                                        alignItems: 'center',
+
+                                    }}
+                                />
+
+                            </ScrollView>
+                        </>
+                }
+
             </SafeAreaView>
         </View>
     )

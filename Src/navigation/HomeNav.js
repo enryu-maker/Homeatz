@@ -11,7 +11,6 @@ import {
 import { Platform, View, Text } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { ActivityIndicator } from 'react-native-paper';
-import Home from '../pages/customer/screens/Home';
 import Tab from './Tab';
 import ChefInfo from '../pages/customer/screens/ChefInfo';
 import FoodInfo from '../pages/customer/screens/FoodInfo';
@@ -22,6 +21,9 @@ import Contact from '../constants/Contact';
 import Data from '../constants/Data';
 import Faq from '../constants/Faq';
 import Terms from '../constants/Terms';
+import LottieView from 'lottie-react-native';
+import { animation } from '../assets/animation';
+
 const Stack = createNativeStackNavigator();
 export default function HomeNav() {
   const dispatch = useDispatch();
@@ -49,7 +51,12 @@ export default function HomeNav() {
   if (loading) {
     return (
       <View className=" flex-1 justify-center bg-white items-center text-logoPink">
-        <ActivityIndicator size={'large'} color={'#bc3061'} />
+        <LottieView
+          source={animation.location} // Add your Lottie file path here
+          autoPlay
+          loop
+          style={{ width: 250, height: 250 }} // Adjust size as needed
+        />
         <Text className=" text-lg text-darkGrey text-center font-suseR">
           Fetching Your Current Location
         </Text>

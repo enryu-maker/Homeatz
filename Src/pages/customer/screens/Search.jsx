@@ -49,7 +49,7 @@ export default function Search({
                 backgroundColor="#ffffff"
                 translucent={true}
             />
-            <SafeAreaView className='flex-1 bg-white w-full h-full justify-start items-center'>
+            <SafeAreaView className='flex-1 bg-white w-full h-full mt-11 justify-start items-center'>
                 <TouchableOpacity
                     className='w-[92%] self-center'
                     onPress={() => {

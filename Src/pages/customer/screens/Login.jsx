@@ -11,8 +11,16 @@ import React from 'react';
 import { images } from '../../../assets/image';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import { useDispatch } from 'react-redux';
+import { LoginAction } from '../../../../store/actions';
 export default function Login({ navigation, route }) {
   const [show, setShow] = React.useState(false);
+  const [loading, setLoading] = React.useState(false);
+  const [data, setData] = React.useState({
+    "email": "",
+    "password": ""
+  })
+  const dispatch = useDispatch()
   return (
     <View className=" flex-1">
       <StatusBar
@@ -35,7 +43,7 @@ export default function Login({ navigation, route }) {
           </Text>
           <TouchableOpacity className="w-5 h-5"></TouchableOpacity>
         </View>
-        <Image className="w-full h-[35%] object-cover" source={images.login} />
+        <Image className="object-contain rounded-full border w-[200px] h-[200px]" source={route?.params?.chef ? images.cook : images.bonus} />
         <KeyboardAwareScrollView
           className='w-screen px-4 space-y-5 h-[550px]'
         >
@@ -48,6 +56,10 @@ export default function Login({ navigation, route }) {
                 autoCapitalize="none"
                 autoCorrect={false}
                 cursorColor={'#bc3061'}
+                value={data?.email}
+                onChangeText={(text) => {
+                  setData({ ...data, email: text })
+                }}
                 placeholder="enter your email"
                 placeholderTextColor={'#6b7280'}
                 className="w-full px-4 text-lg font-suseR h-[50px] bg-white border outline outline-logoPink rounded-md mt-2"
@@ -63,6 +75,10 @@ export default function Login({ navigation, route }) {
                   autoCorrect={false}
                   cursorColor={'#bc3061'}
                   secureTextEntry={show}
+                  value={data?.password}
+                  onChangeText={(text) => {
+                    setData({ ...data, password: text })
+                  }}
                   className="w-[92%] text-lg font-suseR"
                   placeholder="enter your password"
                   placeholderTextColor={'#6b7280'}
@@ -84,7 +100,12 @@ export default function Login({ navigation, route }) {
                 Forgot Password?
               </Text>
             </TouchableOpacity>
-            <TouchableOpacity className="w-[100%] justify-center rounded-md bg-logoPink h-[50px] items-center">
+            <TouchableOpacity
+              onPress={() => {
+                // dispatch(LoginAction(setLoading, data, navigation))
+                console.log(data)
+              }}
+              className="w-[100%] justify-center rounded-md bg-logoPink h-[50px] items-center">
               <Text className="text-2xl font-suseR text-center text-white ">
                 {route?.params?.chef ? 'Chef Login' : 'Customer Login'}
               </Text>

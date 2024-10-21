@@ -59,14 +59,14 @@ export default function Register({ navigation, route }) {
     }
   };
   return (
-    <View className=" h-screen w-screen">
+    <View className=" flex-1 h-screen w-screen">
       <StatusBar
         barStyle="dark-content"
         hidden={false}
         backgroundColor="#ffffff"
         translucent={true}
       />
-      <SafeAreaView className=' flex-1 bg-white w-full  justify-center items-center'>
+      <SafeAreaView className=' flex-1 bg-white w-full pt-14   justify-center items-center'>
         {/* <View className="flex-row w-[100%] px-2 h-[50px] items-center justify-between ">
           <TouchableOpacity
             onPress={() => {
@@ -142,6 +142,9 @@ export default function Register({ navigation, route }) {
                 autoCorrect={false}
                 cursorColor={'#bc3061'}
                 placeholder="enter your fullname"
+                onChangeText={(text) => {
+                  setData({ ...data, full_name: text })
+                }}
                 placeholderTextColor={'#6b7280'}
                 className="w-full px-4 text-base font-suseR h-[50px] bg-white border outline outline-logoPink rounded-md mt-2"
               />
@@ -155,6 +158,9 @@ export default function Register({ navigation, route }) {
                 autoCorrect={false}
                 cursorColor={'#bc3061'}
                 placeholder="enter your email"
+                onChangeText={(text) => {
+                  setData({ ...data, email: text })
+                }}
                 placeholderTextColor={'#6b7280'}
                 className="w-full px-4  text-base font-suseR h-[50px] bg-white border outline outline-logoPink rounded-md mt-2"
               />
@@ -165,7 +171,7 @@ export default function Register({ navigation, route }) {
               </Text>
               <View className="w-full h-[50px] flex-row items-center justify-between px-3 text-lg font-suseR bg-white border outline outline-logoPink rounded-md mt-2">
                 <TouchableOpacity className='w-auto h-[50px] border-r justify-center items-center'>
-                  <Text className=' font-bold  pr-2 text-base mt-2 font-suseR'>{countrycode}</Text>
+                  <Text className=' font-semibold  pr-2 text-base font-suseR'>{countrycode}</Text>
                 </TouchableOpacity>
                 <TextInput
                   autoCapitalize="none"
@@ -173,6 +179,9 @@ export default function Register({ navigation, route }) {
                   keyboardType="phone-pad"
                   cursorColor={'#bc3061'}
                   secureTextEntry={show}
+                  onChangeText={(text) => {
+                    setData({ ...data, phone: text })
+                  }}
                   className="w-[92%] px-2 text-base font-suseR"
                   placeholder="enter your mobile number"
                   placeholderTextColor={'#6b7280'}
@@ -189,6 +198,9 @@ export default function Register({ navigation, route }) {
                   autoCorrect={false}
                   cursorColor={'#bc3061'}
                   secureTextEntry={show}
+                  onChangeText={(text) => {
+                    setData({ ...data, password: text })
+                  }}
                   className="w-[92%] text-base h-[50px] font-suseR"
                   placeholder="enter your password"
                   placeholderTextColor={'#6b7280'}
@@ -209,7 +221,8 @@ export default function Register({ navigation, route }) {
               onPress={() => {
                 data['is_chef'] = route?.params?.chef ? 1 : 0;
                 data['profile_photo'] = image;
-                dispatch(RegisterAction(setLoading, data, navigation))
+                console.log(data)
+                // dispatch(RegisterAction(setLoading, data, navigation))
               }}
               className="w-[100%] justify-center rounded-md bg-logoPink h-[50px] items-center">
               <Text className="text-2xl font-suseR text-center text-white ">

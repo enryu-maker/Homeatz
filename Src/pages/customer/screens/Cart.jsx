@@ -12,13 +12,18 @@ export default function Cart({
     navigation,
     route
 }) {
-    console.log(route?.params?.id)
     const cart2 = useSelector(state => {
         const kitchenEntry = state.Reducers.cart2.find(k => k.kitchen_id === route?.params?.id);
         return kitchenEntry ? kitchenEntry.cart : []; // Return the cart if found, or an empty array if not
     });
 
     console.log(cart2)
+    function getTotal(cart) {
+        var total = 0
+        cart.map((item) => {
+            total += item?.price * item?.count
+        })
+    }
     return (
         <View className=" flex-1">
             <StatusBar
@@ -53,6 +58,16 @@ export default function Cart({
                     keyExtractor={(item) => item?.name}
                 />
             </SafeAreaView>
+            <TouchableOpacity
+                className=' w-[60%] bg-iconColor py-2 justify-around flex-row items-center rounded-xl'
+            >
+                <Text className=' text-white text-lg font-suseB'>
+                    Checkout
+                </Text>
+                <Text className=' text-white text-lg font-suseB'>
+                    Checkout
+                </Text>
+            </TouchableOpacity>
         </View>
     )
 }

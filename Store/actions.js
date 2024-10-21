@@ -1,6 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
-import axiosIns, {baseURL, baseURL1} from '../src/helper/Helper';
+import axiosIns, { baseURL, baseURL1 } from '../src/helper/Helper';
 import Toast from 'react-native-toast-message';
 import GetLocation from 'react-native-get-location';
 import PhonePePaymentSDK from 'react-native-phonepe-pg';
@@ -97,7 +97,7 @@ export const getLocation = (setLoading, type) => {
           console.log(error.code, error.message);
           setLoading(false);
         },
-        {enableHighAccuracy: true, timeout: 60000},
+        { enableHighAccuracy: true, timeout: 60000 },
       );
     } else {
       GetLocation.getCurrentPosition({
@@ -135,7 +135,7 @@ export const getLocation = (setLoading, type) => {
             });
         })
         .catch(error => {
-          const {code, message} = error;
+          const { code, message } = error;
           console.warn(code, message);
         });
     }
@@ -229,8 +229,8 @@ export const deleteAccount = (setLoading, type, reason) => {
         baseURL + 'deleteaccount/',
         type
           ? {
-              reason: reason,
-            }
+            reason: reason,
+          }
           : {},
       );
       Toast.show({
@@ -603,6 +603,10 @@ export const LoginAction = (setLoading, data, navigation) => {
   };
 };
 
+export const sendDeviceID = () => {
+
+}
+
 export const RegisterAction = (setLoading, data, navigation) => {
   const formdata = new FormData();
   formdata.append('full_name', data.full_name);
@@ -698,12 +702,12 @@ export const updateStatus = (id, data, setLoading, code, navigation) => {
         baseURL + `setorderstatus/${id}/`,
         data === 5
           ? {
-              status: data,
-              otp: code,
-            }
+            status: data,
+            otp: code,
+          }
           : {
-              status: data,
-            },
+            status: data,
+          },
       );
       console.log(response?.data);
       if (response.status === 200 || response.status === 201) {
@@ -1193,7 +1197,7 @@ export const getBannerAction = () => {
       let response = await axios.get(baseURL + 'hemedia/getbanners/');
       response.data.map(item => {
         data.push({
-          img: {uri: item.banner},
+          img: { uri: item.banner },
         });
       });
       dispatch({
