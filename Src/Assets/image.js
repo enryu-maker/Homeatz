@@ -28,5 +28,7 @@ export const images = {
   delivery: require('./Images/delivery.png'),
   banquet: require('./Images/banquet.png'),
   pickup: require('./Images/pickup.jpg'),
+  upi: require('./Images/upi.png'),
+  add: require('./Images/add-location.png'),
 
 };

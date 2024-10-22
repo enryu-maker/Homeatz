@@ -5,6 +5,8 @@ import { getCurrencyCode, getItemsAction } from '../../../../store/actions';
 import RNRestart from 'react-native-restart';
 import { images } from '../../../assets/image';
 import Toast from 'react-native-toast-message';
+import LottieView from 'lottie-react-native';
+import { animation } from '../../../assets/animation';
 
 const useInitialURL = () => {
     const [url, setUrl] = React.useState(null);
@@ -100,7 +102,12 @@ export default function FoodInfo({
                 {
                     loading ?
                         <View className='flex-1 justify-center items-center'>
-                            <ActivityIndicator size="large" color="#bc3061" />
+                            <LottieView
+                                source={animation.loading} // Add your Lottie file path here
+                                autoPlay
+                                loop
+                                style={{ width: 250, height: 250 }} // Adjust size as needed
+                            />
                         </View>
                         :
                         <View className='flex-1 '>

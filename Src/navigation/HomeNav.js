@@ -10,7 +10,6 @@ import {
 } from '../../store/actions';
 import { Platform, View, Text } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
-import { ActivityIndicator } from 'react-native-paper';
 import Tab from './Tab';
 import ChefInfo from '../pages/customer/screens/ChefInfo';
 import FoodInfo from '../pages/customer/screens/FoodInfo';
@@ -23,6 +22,11 @@ import Faq from '../constants/Faq';
 import Terms from '../constants/Terms';
 import LottieView from 'lottie-react-native';
 import { animation } from '../assets/animation';
+import Checkout from '../pages/customer/screens/Checkout';
+import Order from '../pages/customer/screens/Order';
+import Address from '../pages/customer/screens/Address';
+import AddAddress from '../pages/customer/screens/AddScreen/AddAddress';
+import AddLine from '../pages/customer/screens/AddScreen/AddLine';
 
 const Stack = createNativeStackNavigator();
 export default function HomeNav() {
@@ -30,6 +34,7 @@ export default function HomeNav() {
   const location = JSON.stringify(
     useSelector(state => state.Reducers.location),
   );
+  const access = useSelector(state => state.Reducers.access)
   const [loading, setLoading] = React.useState(false);
   React.useEffect(() => {
     dispatch(getLocation(setLoading, Platform.OS));
@@ -73,7 +78,7 @@ export default function HomeNav() {
             onTransitionStart: () => Keyboard.dismiss(),
           };
         }}
-        initialRouteName={'Drawer'}>
+        initialRouteName={access ? 'Tab' : 'Onboard'}>
         <Stack.Screen name="Onboard" component={Onboard} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Register" component={Register} />
@@ -87,7 +92,11 @@ export default function HomeNav() {
         <Stack.Screen name="Data" component={Data} />
         <Stack.Screen name="FAQ" component={Faq} />
         <Stack.Screen name="Terms" component={Terms} />
-
+        <Stack.Screen name="Checkout" component={Checkout} />
+        <Stack.Screen name="Order" component={Order} />
+        <Stack.Screen name="Address" component={Address} />
+        <Stack.Screen name="AddAddress" component={AddAddress} />
+        <Stack.Screen name="AddLine" component={AddLine} />
       </Stack.Navigator>
     );
   }

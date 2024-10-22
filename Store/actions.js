@@ -582,7 +582,7 @@ export const LoginAction = (setLoading, data, navigation) => {
             },
           });
           setLoading(false);
-          navigation.navigate('Home');
+          navigation.replace('Tab');
         })
         .catch(error => {
           console.log(error.response.data);
@@ -1050,14 +1050,6 @@ export const getActiveAddress = setLoading => {
       let response2 = await axiosIns.get(baseURL + 'getcreateaddress/');
       let response = await axiosIns.get(baseURL + 'getsetactiveaddress/');
       setLoading(false);
-      Toast.show({
-        type: 'success',
-        text1: 'Active Address Updated Successfully',
-        visibilityTime: 2000,
-        autoHide: true,
-        topOffset: 30,
-        bottomOffset: 40,
-      });
       dispatch({
         type: 'GET_ADDRESS',
         payload: {

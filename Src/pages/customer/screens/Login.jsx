@@ -14,7 +14,7 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import { useDispatch } from 'react-redux';
 import { LoginAction } from '../../../../store/actions';
 export default function Login({ navigation, route }) {
-  const [show, setShow] = React.useState(false);
+  const [show, setShow] = React.useState(true);
   const [loading, setLoading] = React.useState(false);
   const [data, setData] = React.useState({
     "email": "",
@@ -43,7 +43,7 @@ export default function Login({ navigation, route }) {
           </Text>
           <TouchableOpacity className="w-5 h-5"></TouchableOpacity>
         </View>
-        <Image className="object-contain rounded-full border w-[200px] h-[200px]" source={route?.params?.chef ? images.cook : images.bonus} />
+        <Image className="object-contain rounded-full border w-[150px] h-[150px]" source={route?.params?.chef ? images.cook : images.bonus} />
         <KeyboardAwareScrollView
           className='w-screen px-4 space-y-5 h-[550px]'
         >
@@ -102,8 +102,8 @@ export default function Login({ navigation, route }) {
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => {
-                // dispatch(LoginAction(setLoading, data, navigation))
-                console.log(data)
+                dispatch(LoginAction(setLoading, data, navigation))
+                // console.log(data)
               }}
               className="w-[100%] justify-center rounded-md bg-logoPink h-[50px] items-center">
               <Text className="text-2xl font-suseR text-center text-white ">

@@ -24,6 +24,8 @@ export default function Home({
     const location = useSelector(state => state.Reducers.location)
     const banner = useSelector(state => state.Reducers.banner);
     const popular = useSelector(state => state.Reducers.popular);
+    const active = useSelector(state => state.Reducers.active);
+
     React.useEffect(() => {
         if (access != null) {
             dispatch(getActiveAddress(setLoading))
@@ -63,8 +65,8 @@ export default function Home({
                                         color='#bc3061'
                                     />
                                     <View className='w-[100px]'>
-                                        <Text className='text-lg font-suseB text-gray-600'>{location?.city}</Text>
-                                        <Text className='text-xs font-suseB text-gray-400 '>{location?.pin_code}</Text>
+                                        <Text className='text-lg font-suseB text-gray-600'>{active == {} ? location?.city : active?.address_type}</Text>
+                                        <Text className='text-xs font-suseB text-gray-400 '>{active == {} ? location?.pin_code : location?.pin_code}</Text>
                                     </View>
                                 </View>
                                 <TouchableOpacity
@@ -174,10 +176,10 @@ export default function Home({
                                     renderItem={({ item, index }) => {
                                         return (
                                             <KitchenCard
-                                                name={chefs?.name}
-                                                img={chefs?.icon}
-                                                id={chefs?.id}
-                                                distance={chefs?.distance}
+                                                name={item?.name}
+                                                img={item?.icon}
+                                                id={item?.id}
+                                                distance={item?.distance}
                                                 navigation={navigation}
                                             />
                                         );

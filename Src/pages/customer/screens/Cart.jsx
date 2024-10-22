@@ -17,13 +17,20 @@ export default function Cart({
         return kitchenEntry ? kitchenEntry.cart : []; // Return the cart if found, or an empty array if not
     });
 
-    console.log(cart2)
     function getTotal(cart) {
         var total = 0
         cart.map((item) => {
-            total += item?.price * item?.count
+            total = item?.price * item?.count + total
         })
+        return total
     }
+    const dispatch = useDispatch()
+    const location = useSelector(state => state.Reducers.location)
+    const access = useSelector(state => state.Reducers.access)
+    const [code, setCode] = React.useState("")
+    React.useEffect(() => {
+        dispatch(getCurrencyCode(location?.country, setCode))
+    }, [dispatch])
     return (
         <View className=" flex-1">
             <StatusBar
@@ -47,6 +54,7 @@ export default function Cart({
                 </View>
                 <FlatList
                     className='w-screen mt-5'
+                    disableVirtualization
                     showsVerticalScrollIndicator={false}
 
                     data={cart2}
@@ -59,12 +67,23 @@ export default function Cart({
                 />
             </SafeAreaView>
             <TouchableOpacity
-                className=' w-[60%] bg-iconColor py-2 justify-around flex-row items-center rounded-xl'
+                onPress={() => {
+                    if (access === null) {
+                        navigation.navigate("Login")
+                    }
+                    else {
+                        navigation.navigate("Checkout", {
+                            cart: cart2
+                        })
+                    }
+
+                }}
+                className=' w-full bg-iconColor h-[80px] justify-between px-5 flex-row items-center'
             >
                 <Text className=' text-white text-lg font-suseB'>
-                    Checkout
+                    {code} {getTotal(cart2)}
                 </Text>
-                <Text className=' text-white text-lg font-suseB'>
+                <Text className=' bg-white px-6 py-2 tracking-widest rounded-lg font-bold text-lg font-suseB'>
                     Checkout
                 </Text>
             </TouchableOpacity>

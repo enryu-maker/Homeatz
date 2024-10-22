@@ -99,9 +99,9 @@ export default function CartCard({
                         </Text>
                     </TouchableOpacity>
                 </View>
-                <Text className=' text-md text-right text-gray-600 font-suseB px-1'>
+                {/* <Text className=' text-md text-right text-gray-600 font-suseB px-1'>
                     {code} {item?.price * count}
-                </Text>
+                </Text> */}
             </View>
 
         </View>

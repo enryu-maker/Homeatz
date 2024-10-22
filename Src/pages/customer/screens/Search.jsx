@@ -8,7 +8,6 @@ import {
     SafeAreaView,
     Keyboard,
     FlatList,
-    ActivityIndicator
 } from 'react-native';
 import React from 'react';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
@@ -16,6 +15,8 @@ import { images } from '../../../assets/image';
 import { getLocation, searchProduct } from '../../../../store/actions';
 import { useDispatch, useSelector } from 'react-redux';
 import FoodCard from '../components/FoodCard';
+import LottieView from 'lottie-react-native';
+import { animation } from '../../../assets/animation';
 export default function Search({
     navigation,
 }) {
@@ -88,9 +89,11 @@ export default function Search({
                 {
                     loading ?
                         <View className=' flex-1 justify-center items-center'>
-                            <ActivityIndicator
-                                size="large"
-                                color={"#e53988"}
+                            <LottieView
+                                source={animation.loading} // Add your Lottie file path here
+                                autoPlay
+                                loop
+                                style={{ width: 250, height: 250 }} // Adjust size as needed
                             />
                         </View>
                         :
