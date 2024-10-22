@@ -16,8 +16,8 @@ export default function AddressCard({
 
     return (
         <TouchableOpacity
-            className={`w-[92%] self-center p-2  mt-5 rounded-lg shadow-md bg-white 
-        ${active ? 'border border-black' : 'border-0'}`}
+            className={`w-[92%]    flex-col items-start
+                px-2 justify-evenly rounded-xl ${active ? 'border border-black' : 'border border-gray-300'} mt-5 py-1 self-center h-[130px]`}
             onPress={() => {
                 dispatch(setActiveAddress(setLoading, data?.id));
                 dispatch(getActiveAddress(setLoading));
@@ -37,7 +37,7 @@ export default function AddressCard({
                         </Text>
 
                         {show && (
-                            <View className="flex-row justify-end mt-2">
+                            <View className="flex-row self-end justify-end mt-2">
                                 <TouchableOpacity
                                     onPress={() => {
                                         dispatch(DeleteAddress(setLoading, data?.id, setAddress));

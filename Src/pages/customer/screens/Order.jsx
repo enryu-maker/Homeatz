@@ -83,11 +83,8 @@ export default function Order({
                         }} />}
                     contentContainerStyle={{
                         alignItems: "center",
-                        width: "100%"
-                        //     paddingBottom: 20,
-
                     }}
-                    data={[1, 2, 3, 4]}
+                    data={currentchefOrders?.slice(-10).reverse()}
                     renderItem={({ item, index }) => <OrderCard key={item?.id} order={item} navigation={navigation} />}
                     keyExtractor={(item) => item.toString()}
                 />
