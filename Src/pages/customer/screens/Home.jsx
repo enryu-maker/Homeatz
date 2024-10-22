@@ -19,7 +19,6 @@ export default function Home({
     const [top, setTop] = React.useState([])
     const [chefs, setChefs] = React.useState([])
     const width = Dimensions.get('window').width;
-    // const active = useSelector(state => state.Reducers.active)
     const access = useSelector(state => state.Reducers.access)
     const location = useSelector(state => state.Reducers.location)
     const banner = useSelector(state => state.Reducers.banner);
