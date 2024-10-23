@@ -761,13 +761,12 @@ export const updateCartAction = data => {
   };
 };
 
-export const createOrder = (data, setLoading, selected, navigation) => {
+export const createOrder = (data, setLoading, navigation) => {
   setLoading(true);
   return async dispatch => {
-    if (selected === 1) {
-      data['payment_mode'] = 'ONLINE';
+    if (data['payment_mode'] = 'ONLINE') {
       axiosIns.post(baseURL + 'listcreateorder/', data).then(response => {
-        console.log(response.data);
+        console.log(response?.data);
         PhonePePaymentSDK.init(
           'PRODUCTION',
           'HOMEATZONLINE',
@@ -809,10 +808,10 @@ export const createOrder = (data, setLoading, selected, navigation) => {
                       },
                     })
                     .then(res => {
-                      if (res.data.status === false) {
+                      if (res?.data?.status === false) {
                         Toast.show({
                           type: 'error',
-                          text1: res.data.msg,
+                          text1: res?.data?.msg,
                           visibilityTime: 2000,
                           autoHide: true,
                           topOffset: 50,
@@ -821,7 +820,7 @@ export const createOrder = (data, setLoading, selected, navigation) => {
                         setLoading(false);
                       } else {
                         navigation.navigate('Placed', {
-                          item: response.data,
+                          item: response?.data,
                         });
                         setLoading(false);
                       }
@@ -832,7 +831,7 @@ export const createOrder = (data, setLoading, selected, navigation) => {
                 console.log(e);
                 Toast.show({
                   type: 'error',
-                  text1: e.response.data.msg,
+                  text1: e?.response?.data?.msg,
                   visibilityTime: 2000,
                   autoHide: true,
                   topOffset: 30,
@@ -845,7 +844,7 @@ export const createOrder = (data, setLoading, selected, navigation) => {
             console.log(error);
             Toast.show({
               type: 'error',
-              text1: error.response.data.msg,
+              text1: error?.response?.data?.msg,
               visibilityTime: 2000,
               autoHide: true,
               topOffset: 30,
@@ -855,7 +854,6 @@ export const createOrder = (data, setLoading, selected, navigation) => {
           });
       });
     } else {
-      data['payment_mode'] = 'COD';
       axiosIns
         .post(baseURL + 'listcreateorder/', data)
         .then(response => {

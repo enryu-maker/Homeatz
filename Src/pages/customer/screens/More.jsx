@@ -140,7 +140,9 @@ export default function More({
                             </Text> */}
                         </ScrollView>
                         :
-                        <ScrollView>
+                        <ScrollView
+                            className='w-full h-full'
+                        >
                             <View className="w-full  h-[220px] justify-evenly items-center bg-iconColor p-2">
                                 <Text className="text-2xl text-white font-suseR text-center">
                                     Continue As?
@@ -224,10 +226,10 @@ export default function More({
 
                                 </TouchableOpacity>
                             </View>
-                            <Text className='text-gray-400 py-5 text-md font-suseR'>
+                            <Text className='text-gray-400 py-5 text-center text-md font-suseR'>
                                 Version : 1.2
                             </Text>
-                            <Text className='text-gray-400 text-left w-full bottom-0 p-5 absolute text-2xl font-suseB'>
+                            <Text className='text-gray-400 text-left w-full bottom-0 p-5 fixed text-2xl font-suseB'>
                                 food made with <Text className=' text-iconColor'>LOVE</Text>
                             </Text>
                         </ScrollView>

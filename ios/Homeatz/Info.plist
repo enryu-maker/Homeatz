@@ -77,5 +77,13 @@
 		<string>Zocial.ttf</string>
 		<string>Fontisto.ttf</string>
 	</array>
+	<key>LSApplicationQueriesSchemes</key>
+<array>
+    <string>ppemerchantsdkv1</string>
+    <string>ppemerchantsdkv2</string>
+    <string>ppemerchantsdkv3</string>
+    <string>paytmmp</string>
+    <string>gpay</string>
+</array>
 </dict>
 </plist>

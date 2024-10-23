@@ -30,5 +30,9 @@ export const images = {
   pickup: require('./Images/pickup.jpg'),
   upi: require('./Images/upi.png'),
   add: require('./Images/add-location.png'),
+  wait: require('./Images/wait-time.png'),
+  foodpickup: require('./Images/food-pickup.png'),
+
+
 
 };
