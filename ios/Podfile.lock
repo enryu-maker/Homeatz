@@ -30,7 +30,7 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
-  - PhonePePayment (2.7.3)
+  - PhonePePayment (3.0.3)
   - RCT-Folly (2024.01.01.00):
     - boost
     - DoubleConversion
@@ -1284,11 +1284,11 @@ PODS:
     - Yoga
   - react-native-maps (1.18.0):
     - React-Core
-  - react-native-phonepe-pg (2.0.1):
+  - react-native-phonepe-pg (2.0.2):
     - DoubleConversion
     - glog
     - hermes-engine
-    - PhonePePayment (= 2.7.3)
+    - PhonePePayment (= 3.0.3)
     - RCT-Folly (= 2024.01.01.00)
     - RCTRequired
     - RCTTypeSafety
@@ -2009,7 +2009,7 @@ SPEC CHECKSUMS:
   hermes-engine: 8d2103d6c0176779aea4e25df6bb1410f9946680
   lottie-ios: a881093fab623c467d3bce374367755c272bdd59
   lottie-react-native: 2a3335e7f3cfdc881f400b08c7e9e84d18920db1
-  PhonePePayment: 13abece65df5d9ca6f976b001e7a91112b5c2107
+  PhonePePayment: 5a37a381127bfdd635b3a85123ad96a421288b2a
   RCT-Folly: 4464f4d875961fce86008d45f4ecf6cef6de0740
   RCTDeprecation: 4191f6e64b72d9743f6fe1a8a16e89e868f5e9e7
   RCTRequired: 9bb589570f2bb3abc6518761e3fd1ad9b7f7f06c
@@ -2041,7 +2041,7 @@ SPEC CHECKSUMS:
   React-microtasksnativemodule: 4943ad8f99be8ccf5a63329fa7d269816609df9e
   react-native-geolocation: 0c7a8496962d3268ac5b28f22a8e5d7a04c43f1a
   react-native-maps: 2e6e9896195781327ee15b33e3e84bf73c08207a
-  react-native-phonepe-pg: 1340ddeb70e009f5c0df3c52a7c567053a884430
+  react-native-phonepe-pg: df81f0e2b6f94c9bd9a86c1baf96f6c6419b7e07
   react-native-restart: 7595693413fe3ca15893702f2c8306c62a708162
   react-native-safe-area-context: 851c62c48dce80ccaa5637b6aa5991a1bc36eca9
   react-native-splash-screen: 4312f786b13a81b5169ef346d76d33bc0c6dc457
